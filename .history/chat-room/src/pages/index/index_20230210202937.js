@@ -5,9 +5,9 @@ const index = ()=>{
 
     const socket = new Socket()
 
-    socket.onOpen(()=>{
-        socket.ws.send('test')
-    })
+    console.log('socket is',socket)
+
+    socket.send('test')
 
     return (
         <div className="App">

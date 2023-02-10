@@ -39,7 +39,7 @@ class newWS {
 
     //断开websocket连接
     onClose(func){
-        this.ws.onclose = ()=>{
+        this.ws.onClose = ()=>{
             func()
         }
     }

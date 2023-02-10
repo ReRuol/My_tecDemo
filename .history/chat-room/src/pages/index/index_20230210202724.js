@@ -1,14 +1,6 @@
 import logo from './logo.svg';
-import Socket from '@/utils/websocket'
 
 const index = ()=>{
-
-    const socket = new Socket()
-
-    socket.onOpen(()=>{
-        socket.ws.send('test')
-    })
-
     return (
         <div className="App">
           <header className="App-header">

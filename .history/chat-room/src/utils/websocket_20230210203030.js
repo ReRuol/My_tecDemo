@@ -15,8 +15,8 @@ class newWS {
     //连接开启时
     onOpen(func = null){
         if(typeof func === 'function'){
-            this.ws.onopen = (evt)=>{
-                func(evt)
+            this.ws.onopen = ()=>{
+                func()
             }
         }
     }
@@ -27,22 +27,11 @@ class newWS {
             msg = msg()
         }
 
-        this.ws.send('test')
+        console.log('this.ws is ',this.ws)
+        // this.ws.send(msg)
     }
 
-    //接收服务端消息
-    onMessage(func){
-        this.ws.onmessage = (evt)=>{
-            func(evt)
-        }
-    }
 
-    //断开websocket连接
-    onClose(func){
-        this.ws.onclose = ()=>{
-            func()
-        }
-    }
 }
 
 export default newWS
