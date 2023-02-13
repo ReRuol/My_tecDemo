@@ -18,7 +18,7 @@ function handler(req, res){
 io.on('connection', socket => {
     console.log('有用户连接上了')
     userCount++
-    socket.userName = `用户${userCount}`
+    socket.userName = `用户${userCount}` 
 })
 
 app.listen(PORT, () => {

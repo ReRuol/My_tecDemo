@@ -1,5 +1,3 @@
-// import {io} from 'socket.io'
-
 const defaultUrl = 'ws://localhost:3001'
 
 class newWS {

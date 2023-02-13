@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import Socket from '@/utils/websocket'
- 
+
 const socket = new Socket()
 
 const index = ()=>{
+  
 
     const sendText = (msg)=>{
       socket.send(msg)

@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import Socket from '@/utils/websocket'
- 
-const socket = new Socket()
 
 const index = ()=>{
 
-    const sendText = (msg)=>{
-      socket.send(msg)
-    }
+    const socket = new Socket()
 
-    socket.onMessage((evt)=>{
-        console.log('客户端接收到的信息',evt)
+    socket.onOpen(()=>{
+        console.log('socket 已连接')
+        socket.ws.send('test')
     })
 
     return (
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <div onClick={()=>sendText('test')} style={{background:'red'}}>button</div>
+            <div>button</div>
             <p>
               Edit <code>src/App.js</code> and save to reload.
             </p>

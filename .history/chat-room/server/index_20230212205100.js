@@ -15,11 +15,11 @@ function handler(req, res){
 }
 
 //每次只要有用户连接，函数就会被执行，并给当前连接用户创建connect对象
-io.on('connection', socket => {
+io.on('connection',(connect => {
     console.log('有用户连接上了')
     userCount++
-    socket.userName = `用户${userCount}`
-})
+    connect.userName = `用户${userCount}`
+}))
 
 app.listen(PORT, () => {
     console.log('服务器端口启动成功')

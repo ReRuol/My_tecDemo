@@ -1,6 +1,4 @@
-// import {io} from 'socket.io'
-
-const defaultUrl = 'ws://localhost:3001'
+const defaultUrl = 'ws://echo.websocket.org'
 
 class newWS {
 

@@ -1,4 +1,4 @@
-// import {io} from 'socket.io'
+import {io} from 'socket.io'
 
 const defaultUrl = 'ws://localhost:3001'
 
@@ -9,7 +9,7 @@ class newWS {
         if (!url || typeof url !== 'string') {
             url = defaultUrl
         }
-        this.ws = new WebSocket(url, protocol)
+        this.ws = io(url, protocol)
 
     }
 

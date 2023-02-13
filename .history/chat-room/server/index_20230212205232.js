@@ -1,3 +1,5 @@
+const { Socket } = require('dgram')
+
 const app = require('http').createServer(handler)
 const io = require('socket.io')(app)
 const PORT = 3001
@@ -15,10 +17,10 @@ function handler(req, res){
 }
 
 //每次只要有用户连接，函数就会被执行，并给当前连接用户创建connect对象
-io.on('connection', socket => {
+io.on('connection', Socket => {
     console.log('有用户连接上了')
-    userCount++
-    socket.userName = `用户${userCount}`
+    userCount++ 
+    Socket.userName = `用户${userCount}` 
 })
 
 app.listen(PORT, () => {

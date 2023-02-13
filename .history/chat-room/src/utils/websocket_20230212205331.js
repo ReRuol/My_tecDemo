@@ -1,4 +1,4 @@
-// import {io} from 'socket.io'
+import {io} from 'socket.io'
 
 const defaultUrl = 'ws://localhost:3001'
 

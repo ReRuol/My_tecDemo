@@ -1,17 +1,13 @@
 import logo from './logo.svg';
 import Socket from '@/utils/websocket'
- 
-const socket = new Socket()
 
 const index = ()=>{
+
+    const socket = new Socket()
 
     const sendText = (msg)=>{
       socket.send(msg)
     }
-
-    socket.onMessage((evt)=>{
-        console.log('客户端接收到的信息',evt)
-    })
 
     return (
         <div className="App">
